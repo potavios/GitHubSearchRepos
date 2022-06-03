@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/drawable/ic_back.xml" value="0.1185" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/layout/fragment_about.xml" value="0.37864583333333335" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/layout/fragment_favorites.xml" value="0.37864583333333335" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/layout/fragment_home.xml" value="0.37864583333333335" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/layout/fragment_home2.xml" value="0.3645833333333333" />
+        <entry key="..\:/developmentTools/MyProjects/GitHubSearchRepos/app/src/main/res/menu/app_menu_items.xml" value="0.18" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="dev.pauloos.githubsearchrepos">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".GitHubSearchReposApp"
         android:allowBackup="true"

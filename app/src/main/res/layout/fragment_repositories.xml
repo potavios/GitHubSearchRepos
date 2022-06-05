@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="8dp"
-    tools:context=".presentation.home.HomeFragment">
+    tools:context=".presentation.repositories.RepositoriesFragment">
 
     <EditText
         android:id="@+id/et_search"
@@ -23,7 +23,7 @@
         android:elevation="8dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_repositories"
+        android:id="@+id/recycler_view_repositories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"

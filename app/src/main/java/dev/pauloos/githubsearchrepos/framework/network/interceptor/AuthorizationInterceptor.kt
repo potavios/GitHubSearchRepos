@@ -1,8 +1,7 @@
-package dev.pauloos.core.data.network.interceptor
+package dev.pauloos.githubsearchrepos.framework.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
-import okhttp3.internal.toHeaderList
 
 class AuthorizationInterceptor(
     private val apitoken: String)

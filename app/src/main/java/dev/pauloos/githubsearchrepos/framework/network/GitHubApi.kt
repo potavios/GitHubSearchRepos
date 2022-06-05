@@ -1,6 +1,6 @@
-package dev.pauloos.core.data.network
+package dev.pauloos.githubsearchrepos.framework.network
 
-import dev.pauloos.core.data.network.response.DataWrapperResponse
+import dev.pauloos.githubsearchrepos.framework.network.response.DataWrapperResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.QueryMap

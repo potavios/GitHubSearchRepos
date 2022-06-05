@@ -1,4 +1,4 @@
-package dev.pauloos.core.data.network.response
+package dev.pauloos.githubsearchrepos.framework.network.response
 
 import com.google.gson.annotations.SerializedName
 

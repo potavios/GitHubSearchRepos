@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.pauloos.core.data.network.interceptor.AuthorizationInterceptor
+import dev.pauloos.githubsearchrepos.framework.network.interceptor.AuthorizationInterceptor
 import dev.pauloos.githubsearchrepos.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,6 +1,6 @@
 package dev.pauloos.core.domain.model
 
-data class Repository(
+data class GitHubRepository(
     val repositoryName: String,
     val repositoryAuthor: String,
     val starNumber: Int,

@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.pauloos.githubsearchrepos.framework.network.interceptor.AuthorizationInterceptor
 import dev.pauloos.githubsearchrepos.BuildConfig
+import dev.pauloos.githubsearchrepos.framework.network.GitHubApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -59,12 +60,13 @@ object NetworkModule
     @Provides
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
-        converterFactory: GsonConverterFactory) : Retrofit
+        converterFactory: GsonConverterFactory) : GitHubApi
     {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(converterFactory)
             .build()
+            .create(GitHubApi::class.java)
     }
 }

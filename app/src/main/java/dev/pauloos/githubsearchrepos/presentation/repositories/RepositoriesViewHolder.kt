@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import dev.pauloos.core.domain.model.Repository
+import dev.pauloos.core.domain.model.GitHubRepository
 import dev.pauloos.githubsearchrepos.R
 import dev.pauloos.githubsearchrepos.databinding.ItemRepositoryBinding
 
@@ -19,19 +19,19 @@ class RepositoriesViewHolder(
     private val userPicture = itemRepositoryBinding.ivUserPic
     private val favoriteIcon = itemRepositoryBinding.ivFavoriteIcon
 
-    fun bind(repository: Repository)
+    fun bind(gitHubRepository: GitHubRepository)
     {
-        repositoryName.text = repository.repositoryName
-        userName.text = repository.repositoryAuthor
-        starNumber.text = repository.starNumber.toString()
-        forkNumber.text = repository.forkNumber.toString()
+        repositoryName.text = gitHubRepository.repositoryName
+        userName.text = gitHubRepository.repositoryAuthor
+        starNumber.text = gitHubRepository.starNumber.toString()
+        forkNumber.text = gitHubRepository.forkNumber.toString()
 
         Glide.with(itemView)
-            .load(repository.imageUrl)
+            .load(gitHubRepository.imageUrl)
             .fallback(R.drawable.ic_img_loading_error)
             .into(userPicture)
 
-        if (repository.favorite)
+        if (gitHubRepository.favorite)
         {
             Glide.with(itemView)
                 .load(R.drawable.ic_favorite_menu)

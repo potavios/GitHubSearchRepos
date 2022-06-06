@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/flipper_repos"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="8dp"
     tools:context=".presentation.repositories.RepositoriesFragment">
 
-    <EditText
+    <include
+        android:id="@+id/include_view_repos_loading_state"
+        layout="@layout/include_view_repos_loading_state"/>
+
+   <!-- <EditText
         android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -20,7 +25,7 @@
         android:inputType="text"
         android:textSize="16sp"
         android:importantForAutofill="no"
-        android:elevation="8dp" />
+        android:elevation="8dp" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_repositories"
@@ -30,7 +35,8 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_repository" />
 
+    <include
+        android:id="@+id/include_view_repos_error_state"
+        layout="@layout/include_view_repos_error_state"/>
 
-
-
-</LinearLayout>
+</ViewFlipper>

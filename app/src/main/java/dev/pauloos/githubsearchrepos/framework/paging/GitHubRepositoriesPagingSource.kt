@@ -10,6 +10,7 @@ import dev.pauloos.githubsearchrepos.framework.network.response.toGitHubReposito
 
 class GitHubRepositoriesPagingSource(
     private val remoteDataSource: GitHubRepositoriesRemoteDataSource<DataWrapperResponse>,
+    private val token: String,
     private val query: String
 ) : PagingSource<Int, GitHubRepository>()
 {
@@ -27,18 +28,18 @@ class GitHubRepositoriesPagingSource(
             */
 
 
-            val page = params.key ?: 0
+            //val page = params.key ?: 1
             val queries : HashMap<String, String> = hashMapOf()
 
             if (query.isNotEmpty())
             {
-                queries["q="] = query
+                queries["q"] = query
             }
 
-            queries["page"] = page.toString()
+            //queries["page"] = page.toString()
 
             val response = remoteDataSource
-                .fetchGitHubRepositories(BuildConfig.GITHUB_TOKEN, queries)
+                .fetchGitHubRepositories(token, queries)
 
             val pageNumber = 1
             val responseTotalItems = response.totalCount

@@ -15,7 +15,7 @@ class GitHubRepositoriesRepositoryImpl @Inject constructor(
     override fun getGitHubRepositories(token: String, query: String
     ): PagingSource<Int, GitHubRepository>
     {
-        return GitHubRepositoriesPagingSource(remoteDataSource, query)
+        return GitHubRepositoriesPagingSource(remoteDataSource, token, query)
     }
 
 }

@@ -1,11 +1,12 @@
 package dev.pauloos.githubsearchrepos.presentation.repositories
 
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import dev.pauloos.core.domain.model.GitHubRepository
 
-class RepositoriesAdapter : ListAdapter<GitHubRepository, RepositoriesViewHolder>(diffCallback)
+class GitHubRepositoriesAdapter : PagingDataAdapter<GitHubRepository, RepositoriesViewHolder>(diffCallback)
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoriesViewHolder
     {
@@ -14,7 +15,9 @@ class RepositoriesAdapter : ListAdapter<GitHubRepository, RepositoriesViewHolder
 
     override fun onBindViewHolder(holder: RepositoriesViewHolder, position: Int)
     {
-        holder.bind(getItem(position))
+        getItem(position)?.let {
+            holder.bind(it)
+        }
     }
 
     companion object

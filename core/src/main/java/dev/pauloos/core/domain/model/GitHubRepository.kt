@@ -6,5 +6,7 @@ data class GitHubRepository(
     val starNumber: Int,
     val forkNumber: Int,
     val imageUrl: String,
-    val favorite: Boolean
+    val favorite: Boolean = false
 )
+
+

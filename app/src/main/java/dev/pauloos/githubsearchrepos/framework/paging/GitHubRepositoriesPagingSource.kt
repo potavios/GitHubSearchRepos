@@ -4,9 +4,10 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import dev.pauloos.core.data.repository.GitHubRepositoriesRemoteDataSource
 import dev.pauloos.core.domain.model.GitHubRepository
-import dev.pauloos.githubsearchrepos.BuildConfig
 import dev.pauloos.githubsearchrepos.framework.network.response.DataWrapperResponse
 import dev.pauloos.githubsearchrepos.framework.network.response.toGitHubRepositoryModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.junit.runner.RunWith
 
 class GitHubRepositoriesPagingSource(
     private val remoteDataSource: GitHubRepositoriesRemoteDataSource<DataWrapperResponse>,
@@ -16,40 +17,34 @@ class GitHubRepositoriesPagingSource(
 {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GitHubRepository>
     {
-        return try {
-
-            /**
-            Query parameters:
-             q -> "kotlin"
-             sort -> "stars"
-             order -> "desc"
-             page -> "1"
-             per_page -> "5"
-            */
-
-
-            //val page = params.key ?: 1
+        return try
+        {
+            /** Query parameters: q -> "kotlin", sort -> "stars", order -> "desc", page -> "1", per_page -> "5"*/
+            val page = params.key ?: 1
             val queries : HashMap<String, String> = hashMapOf()
 
             if (query.isNotEmpty())
             {
                 queries["q"] = query
+                queries["sort"] = "stars"
+                queries["order"] = "desc"
+                queries["page"] = page.toString()
             }
-
-            //queries["page"] = page.toString()
 
             val response = remoteDataSource
                 .fetchGitHubRepositories(token, queries)
 
-            val pageNumber = 1
+            remoteDataSource
+                .fetchGitHubRepositories(token, queries)
             val responseTotalItems = response.totalCount
 
+
             LoadResult.Page(
-                data = response.items.map { it.toGitHubRepositoryModel() },
+                data =  response.items.map { it.toGitHubRepositoryModel() },
                 prevKey = null,
-                nextKey = if (pageNumber < responseTotalItems)
+                nextKey = if (page < responseTotalItems)
                 {
-                    pageNumber + LIMIT
+                    page + LIMIT
                 } else null
             )
 

@@ -95,6 +95,7 @@ class RepositoriesFragment : Fragment()
                         }
                         FLIPPER_CHILD_ERROR
                     }
+                    else -> {FLIPPER_CHILD_ERROR}
                 }
 
             }

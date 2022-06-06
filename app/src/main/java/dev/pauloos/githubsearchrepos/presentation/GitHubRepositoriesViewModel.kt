@@ -17,7 +17,7 @@ class GitHubRepositoriesViewModel @Inject constructor(
 ) : ViewModel()
 {
     fun gitHubRepositoriesPagingData(token: String, query: String
-    ) : Flow<PagingData<GitHubRepository>>
+    ): Flow<PagingData<GitHubRepository>>
     {
         return getGitHubRepositoriesUseCase(
             GetGitHubRepositoriesUseCase.GetGitHubRepositoriesParams(
@@ -27,7 +27,7 @@ class GitHubRepositoriesViewModel @Inject constructor(
     }
 
     private fun getPageConfig() = PagingConfig(
-        pageSize = 5
+        pageSize = 30
     )
 
 

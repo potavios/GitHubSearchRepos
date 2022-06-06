@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dev.pauloos.core.domain.model.GitHubRepository
 import dev.pauloos.githubsearchrepos.R
-import dev.pauloos.githubsearchrepos.databinding.ItemRepositoryBinding
+import dev.pauloos.githubsearchrepos.databinding.ItemGitHubRepositoryBinding
 
 class RepositoriesViewHolder(
-    itemRepositoryBinding: ItemRepositoryBinding,
+    itemRepositoryBinding: ItemGitHubRepositoryBinding,
 ) : RecyclerView.ViewHolder(itemRepositoryBinding.root)
 {
     private val repositoryName = itemRepositoryBinding.tvRepositoryName
@@ -46,7 +46,7 @@ class RepositoriesViewHolder(
         fun create(parent:ViewGroup): RepositoriesViewHolder
         {
             val inflater = LayoutInflater.from(parent.context)
-            val itemBinding = ItemRepositoryBinding.inflate(inflater, parent, false)
+            val itemBinding = ItemGitHubRepositoryBinding.inflate(inflater, parent, false)
             return RepositoriesViewHolder(itemBinding)
         }
     }

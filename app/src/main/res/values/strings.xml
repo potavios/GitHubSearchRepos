@@ -1,5 +1,12 @@
-<resources>
-    <string name="app_name">GitHubSearchRepos</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Kotlin Top Repos</string>
+    <string name="about_container_fragment_title" translatable="false">Sobre</string>
+    <string name="repos_container_fragment_title" tools:ignore="ExtraTranslation">Repositórios Kotlin Top Stars</string>
+    <string name="about_text" tools:ignore="ExtraTranslation">Aplicativo de demonstração, implementado por <b>Paulo Otavio Santos.</b></string>
+    <string name="about_text_2" tools:ignore="ExtraTranslation"><b>Tecnologias e Bibliotecas Utilizadas:</b>
+        \n- Kotlin \n- Retrofit \n- Retrofit \n- OkHttp
+        \n- Glide \n- Paging 3 \n- Coroutines \n- Navigation Component
+        \n- Dagger Hilt \n- Facebook Shimmer \n- JUnit \n- Mockito
+        \n Arquitetura MVVM + Clean Architecture
+    </string>
 </resources>

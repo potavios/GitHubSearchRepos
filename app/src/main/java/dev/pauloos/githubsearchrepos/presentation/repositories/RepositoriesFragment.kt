@@ -116,6 +116,12 @@ class RepositoriesFragment : Fragment()
         }
     }
 
+    override fun onDestroy()
+    {
+        super.onDestroy()
+        _binding = null
+    }
+
     companion object
     {
         private const val FLIPPER_CHILD_LOADING = 0

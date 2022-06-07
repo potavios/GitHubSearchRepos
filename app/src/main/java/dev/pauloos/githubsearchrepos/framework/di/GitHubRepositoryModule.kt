@@ -23,6 +23,4 @@ interface GitHubRepositoryModule
     fun bindRemoteDataSource(
         dataSource: RetrofitGitHubRepositoriesDataSource
     ): GitHubRepositoriesRemoteDataSource<DataWrapperResponse>
-
-
 }

@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/repositoriesFragment"
         android:name="dev.pauloos.githubsearchrepos.presentation.repositories.RepositoriesFragment"
-        android:label="fragment_repositoriesFragment"
+        android:label="@string/repos_container_fragment_title"
         tools:layout="@layout/fragment_repositories" />
 </navigation>

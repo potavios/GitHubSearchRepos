@@ -32,7 +32,6 @@ class GitHubRepositoriesAdapter : PagingDataAdapter<GitHubRepository, Repositori
             override fun areContentsTheSame(oldItem: GitHubRepository, newItem: GitHubRepository): Boolean
             {
                 return oldItem == newItem
-
             }
         }
     }

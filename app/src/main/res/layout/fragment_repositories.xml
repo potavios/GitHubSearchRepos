@@ -4,28 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/flipper_repos"
+    android:background="#E8F1E7E7"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_margin="8dp"
     tools:context=".presentation.repositories.RepositoriesFragment">
 
     <include
         android:id="@+id/include_view_repos_loading_state"
         layout="@layout/include_view_repos_loading_state"/>
-
-   <!-- <EditText
-        android:id="@+id/et_search"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_margin="16dp"
-        android:hint="Filter repositories by language ..."
-        android:textColorHint="#737E7D"
-        android:padding="12dp"
-        android:background="@drawable/et_search_background"
-        android:inputType="text"
-        android:textSize="16sp"
-        android:importantForAutofill="no"
-        android:elevation="8dp" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_repositories"

@@ -39,13 +39,11 @@ object NetworkModule
 
     @Provides
     fun provideOkHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor,
-        authorizationInterceptor: AuthorizationInterceptor)
+        loggingInterceptor: HttpLoggingInterceptor)
         : OkHttpClient
     {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            /*.addInterceptor(authorizationInterceptor)*/
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
             .build()
